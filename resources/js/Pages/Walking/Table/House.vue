@@ -2,7 +2,8 @@
     <tr :class="[cssClass, 'border-gray-200 border-t']">
         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3">{{ house.number }}</td>
         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            <StatusSelect @update-status-event="updateStatusEventHandler" :house="house" />
+<!--            <StatusSelect @update-status-event="updateStatusEventHandler" :house="house" />-->
+            <Select @update-status-event="updateStatusEventHandler" :house="house" />
         </td>
         <!--                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">-->
         <!--                                    <MapsButton />-->
@@ -17,6 +18,7 @@
 import StatusSelect from "@/Pages/Walking/Table/House/StatusSelect.vue";
 import MapsButton from "@/Pages/Walking/Table/House/MapsButton.vue";
 import {computed} from "vue";
+import Select from "@/Pages/Walking/Table/House/Select.vue";
 
 const emit = defineEmits(['updateStatusEvent'])
 

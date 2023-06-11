@@ -43,7 +43,7 @@ Route::middleware([
         $streetParts->each(function (StreetPart $streetPartModel) use (&$streets){
             $street = [];
             $street['name'] = $streetPartModel->name;
-            $street['key'] = $streetPartModel->getRouteKey();
+            $street['key'] = (string) $streetPartModel->getRouteKey();
 
             $streetPartModel->houses->each(function (\App\Models\House $houseModel) use (&$street) {
 
@@ -58,7 +58,6 @@ Route::middleware([
 
             $streets[] = $street;
         });
-
 
 
 //        $streets[] = [
