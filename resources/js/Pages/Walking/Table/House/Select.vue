@@ -31,9 +31,9 @@ import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } f
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/vue/20/solid'
 
 const statuses = [
-    { id: 0, name: 'Nog aanbellen' },
-    { id: 1, name: 'Deden niet open' },
-    { id: 2, name: 'Eieren verkocht' },
+    { id: 0, name: 'Nog doen' },
+    { id: 1, name: 'Niet thuis' },
+    { id: 2, name: 'Verkocht' },
     { id: 3, name: 'Niets verkocht' },
 ]
 

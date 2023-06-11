@@ -18,16 +18,16 @@ onMounted(() => {
     _streets.value = props.streets
 })
 
-const updateStatusEventHandler = (status, streetKey, number) => {
+const updateStatusEventHandler = (status, streetKey, houseKey) => {
     _streets.value.forEach((item, streetIndex) => {
         if (item.key === streetKey) {
             _streets.value[streetIndex].houses.forEach((house, houseIndex) => {
-                if (house.number === number) {
+                if (house.key === houseKey) {
                     _streets.value[streetIndex].houses[houseIndex].status = status
                     AjaxService.updateStatus({
                         streetPart: streetKey,
                         week: 1,
-                        houseNumber: number,
+                        house: houseKey,
                         status: status,
                     }).then(response => {
                         console.log(response)
@@ -44,7 +44,7 @@ const updateStatusEventHandler = (status, streetKey, number) => {
     <AppLayout title="Walking">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Walking
+                Adressen
             </h2>
         </template>
 

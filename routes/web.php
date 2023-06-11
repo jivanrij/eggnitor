@@ -51,71 +51,18 @@ Route::middleware([
 
                 $house = [];
                 $house['number'] = $houseModel->number;
+                $house['key'] = $houseModel->getRouteKey();
                 $house['status'] = $weekStatus->status;
+
+
+
+                $house['maps'] = urlencode("{$houseModel->streetPart->name} {$houseModel->number}, Oud-Beijerland");
 
                 $street['houses'][] = $house;
             });
 
             $streets[] = $street;
         });
-
-
-//        $streets[] = [
-//            'name' => 'Graaf Van Egmondstraat',
-//            'key' => 'graaf-van-egmondstraat-1',
-//            'houses' => [
-//                [
-//                    'number' => '1',
-//                    'status' => 0
-//                ],
-//                [
-//                    'number' => '2',
-//                    'status' => 0
-//                ]
-//            ],
-//        ];
-//
-//        $streets[] = [
-//            'name' => 'Klaproosstraat',
-//            'key' => 'klaproosstraat-1',
-//            'houses' => [
-//                [
-//                    'number' => '1',
-//                    'status' => 0
-//                ],
-//                [
-//                    'number' => '2',
-//                    'status' => 0
-//                ],
-//                [
-//                    'number' => '3',
-//                    'status' => 0
-//                ]
-//            ],
-//        ];
-//
-//        $streets[] = [
-//            'name' => 'Israelsdreef',
-//            'key' => 'israelsdreef-1',
-//            'houses' => [
-//                [
-//                    'number' => '1',
-//                    'status' => 0
-//                ],
-//                [
-//                    'number' => '2',
-//                    'status' => 1
-//                ],
-//                [
-//                    'number' => '3',
-//                    'status' => 2
-//                ],
-//                [
-//                    'number' => '4',
-//                    'status' => 3
-//                ]
-//            ],
-//        ];
 
         return Inertia::render('Walking', ['streets' => $streets]);
     })->name('walking');

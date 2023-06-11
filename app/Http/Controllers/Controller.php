@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\House;
+use App\Models\WeekStatus;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -13,16 +15,17 @@ class Controller extends BaseController
 
     public function updateStatus(Request $request)
     {
-        $weekNumber = $request->post('week_number');
-        $streetPartId = $request->post('street_part_id');
-        $houseId = $request->post('house_id');
+        $streetPart = $request->post('streetPart');
+        $house = $request->post('house');
         $status = $request->post('status');
+
+        WeekStatus::where('house_id', $house)->update(['status' => $status]);
+
 
         return response()->json([
             'message' => 'Yes!',
-            'weekNumber' => $weekNumber,
-            'streetPartId' => $streetPartId,
-            'houseId' => $houseId,
+            'streetPart' => $streetPart,
+            'house' => $house,
             'status' => $status,
         ]);
     }

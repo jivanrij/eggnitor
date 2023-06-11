@@ -22,22 +22,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('secret'),
         ])->create();
 
-//        $streetPart = StreetPart::create([
-//            'order' => 0,
-//            'name' => 'Israelsdreef',
-//        ]);
-//
-//        $house = House::create([
-//            'street_part_id' => $streetPart->id,
-//            'number' => '207',
-//        ]);
-//
-//        $weekStatus = WeekStatus::create([
-//            'house_id' => $house->id,
-//            'week' => 1,
-//            'status' => 2,
-//        ]);
-
         $this->newStreetPart(0, 'Kareldoorman Straat', [1,2,3,4,5,6,7,8,9]);
         $this->newStreetPart(1, 'Israelsdreef', [207,209,211,213,215,217,219,221,223,225,227,229,231,233]);
         $this->newStreetPart(2, 'Kareldoorman Straat', [15,16,17,18,19,20,21,22,23,24,25,26,27,28]);

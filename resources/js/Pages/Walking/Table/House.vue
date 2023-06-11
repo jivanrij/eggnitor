@@ -9,13 +9,12 @@
         <!--                                    <MapsButton />-->
         <!--                                </td>-->
         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-            <MapsButton />
+            <MapsButton :house="house" />
             <!--                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Herstellen<span class="sr-only">, {{ person.name }}</span></a>-->
         </td>
     </tr>
 </template>
 <script setup>
-import StatusSelect from "@/Pages/Walking/Table/House/StatusSelect.vue";
 import MapsButton from "@/Pages/Walking/Table/House/MapsButton.vue";
 import {computed} from "vue";
 import Select from "@/Pages/Walking/Table/House/Select.vue";
@@ -27,19 +26,19 @@ const cssClass = computed(() => {
         return 'bg-grey-50'
     }
     if (props.house.status === 1) {
-        return 'bg-gray-500'
+        return 'bg-gray-100'
     }
     if (props.house.status === 2) {
-        return 'bg-green-500'
+        return 'bg-green-100'
     }
     if (props.house.status === 3) {
-        return 'bg-yellow-500'
+        return 'bg-yellow-100'
     }
-    return 'bg-yellow-500';
+    return 'bg-yellow-100';
 })
 
 const updateStatusEventHandler = (status) => {
-    emit('updateStatusEvent', status, props.streetKey, props.house.number)
+    emit('updateStatusEvent', status, props.streetKey, props.house.key)
 }
 
 const props = defineProps({
