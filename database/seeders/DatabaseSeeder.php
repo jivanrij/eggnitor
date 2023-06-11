@@ -22,10 +22,110 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('secret'),
         ])->create();
 
-        $this->newStreetPart(0, 'Kareldoorman Straat', [1,2,3,4,5,6,7,8,9]);
-        $this->newStreetPart(1, 'Israelsdreef', [207,209,211,213,215,217,219,221,223,225,227,229,231,233]);
-        $this->newStreetPart(2, 'Kareldoorman Straat', [15,16,17,18,19,20,21,22,23,24,25,26,27,28]);
-        $this->newStreetPart(3, 'Klaproosstraat', [10,11,12,13,14]);
+        $this->newStreetPart(0, 'Graaf van Egmondstraat', [
+            '5'
+        ]);
+        $this->newStreetPart(1, 'Croonenburgh', [
+            '7',
+            '5',
+            '1',
+            '4',
+            '8',
+            '10',
+            '12',
+            '14',
+            '22',
+            '36',
+            '18',
+            '34',
+            '38',
+            '52',
+            '42',
+            '56',
+            '84',
+            '76',
+            '74',
+            '68',
+            '64',
+            '29',
+            '35',
+            '43',
+            '59',
+            '53',
+            '51',
+            '49',
+            '47',
+            '45',
+            '86',
+            '88',
+            '92',
+            '94',
+            '98',
+            '100',
+            '102',
+            '132',
+            '104',
+            '122',
+            '120',
+            '118',
+            '114',
+            '112',
+            '106',
+            '63',
+            '73',
+            '91',
+            '85',
+            '81',
+            '132',
+            '134',
+            '138',
+            '140',
+            '146',
+            '152',
+            '154',
+        ]);
+        $this->newStreetPart(2, 'Asterstraat', [
+            '80',
+            '74',
+            '72',
+            '68',
+            '64',
+            '62',
+            '60',
+        ]);
+        $this->newStreetPart(3, 'Croonenburgh', [
+            '164',
+            '158',
+        ]);
+        $this->newStreetPart(4, 'Asterstraat', [
+            '56',
+            '54',
+            '52',
+            '50',
+            '48',
+            '40',
+            '38',
+            '30',
+            '28',
+            '34',
+            '22',
+            '20',
+        ]);
+        $this->newStreetPart(5, 'Begoniastraat', [
+            '30',
+            '12',
+        ]);
+        $this->newStreetPart(6, 'Lisstraat', [
+            '14',
+            '8',
+            '4',
+            '2',
+        ]);
+        $this->newStreetPart(5, 'Ribesstraat', [
+            '10',
+            '2',
+            '8',
+        ]);
     }
 
     private function newStreetPart($order, $name, $numbers) {
@@ -43,7 +143,7 @@ class DatabaseSeeder extends Seeder
             $weekStatus = WeekStatus::create([
                 'house_id' => $house->id,
                 'week' => 1,
-                'status' => rand(0,3),
+                'status' => 0,
             ]);
         }
     }
