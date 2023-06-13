@@ -23,11 +23,11 @@ defineProps({
             </template>
         </div>
 
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-                <img src="/storage/eieren.png" class="h-40 w-40"/>
-            </div>
-        </div>
+<!--        <div class="max-w-7xl mx-auto p-6 lg:p-8">-->
+<!--            <div class="flex justify-center">-->
+<!--                <img src="/storage/eieren.png" class="h-40 w-40"/>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </template>
 
