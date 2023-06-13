@@ -22,6 +22,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('secret'),
         ])->create();
 
+        User::factory([
+            'name' => 'Theije van Rij',
+            'email' => 'theijevanrij@gmail.com',
+            'password' => Hash::make('HarleyIsLief2010'),
+        ])->create();
+
         $this->newStreetPart(0, 'Graaf van Egmondstraat', [
             '5'
         ]);
