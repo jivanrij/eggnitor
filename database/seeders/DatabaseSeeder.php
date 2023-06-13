@@ -32,17 +32,15 @@ class DatabaseSeeder extends Seeder
             '5'
         ]);
         $this->newStreetPart(1, 'Croonenburgh', [
-            '7',
-            '5',
             '1',
+            '5',
+            '7',
             '4',
-            '8',
             '10',
             '12',
             '14',
             '22',
-            '36',
-            '18',
+            '20',
             '34',
             '38',
             '52',
@@ -53,7 +51,6 @@ class DatabaseSeeder extends Seeder
             '74',
             '68',
             '64',
-            '29',
             '35',
             '43',
             '59',
@@ -68,8 +65,6 @@ class DatabaseSeeder extends Seeder
             '94',
             '98',
             '100',
-            '102',
-            '132',
             '104',
             '122',
             '120',
@@ -82,7 +77,6 @@ class DatabaseSeeder extends Seeder
             '91',
             '85',
             '81',
-            '132',
             '134',
             '138',
             '140',
@@ -96,8 +90,8 @@ class DatabaseSeeder extends Seeder
             '72',
             '68',
             '64',
-            '62',
             '60',
+            '62',
         ]);
         $this->newStreetPart(3, 'Croonenburgh', [
             '164',
@@ -113,7 +107,7 @@ class DatabaseSeeder extends Seeder
             '38',
             '30',
             '28',
-            '34',
+            '24',
             '22',
             '20',
         ]);
@@ -128,9 +122,79 @@ class DatabaseSeeder extends Seeder
             '2',
         ]);
         $this->newStreetPart(5, 'Ribesstraat', [
-            '10',
+            '10 (over paar weken)',
             '2',
+        ]);
+        $this->newStreetPart(0, 'Graaf van Egmondstraat', [
+            '68',
+            '66',
+            '64',
+            '60',
+            '58',
+            '56',
+            '52',
+            '50',
+        ]);
+        $this->newStreetPart(5, 'Begoniastraat', [
+            '1',
+            '3',
+        ]);
+        $this->newStreetPart(5, 'Margrietstraat', [
+            '1',
+            '5',
+            '9',
+        ]);
+        $this->newStreetPart(5, 'Orchideestraat', [
+            '3',
+            '5',
+            '13',
+        ]);
+        $this->newStreetPart(5, 'Esdoornstraat', [
+            '1',
+            '5',
+            '13',
+            '22',
+            '20',
+            '18',
+            '16',
+            '14',
+            '12',
+            '10',
             '8',
+            '2',
+        ]);
+        $this->newStreetPart(5, 'Jasmijnstraat', [
+            '19',
+            '15',
+            '9',
+            '5',
+            '1',
+        ]);
+        $this->newStreetPart(5, 'Margrietstraat', [
+            '21',
+            '17',
+        ]);
+        $this->newStreetPart(5, 'Orchideestraat', [
+            '2',
+            '4',
+            '10',
+            '12',
+            '14',
+            '16',
+            '18',
+            '20',
+        ]);
+        $this->newStreetPart(5, 'Meestoof', [
+            '26',
+        ]);
+        $this->newStreetPart(5, 'Mama\'s werk', [
+            'Christel',
+        ]);
+        $this->newStreetPart(5, 'M Oosteromstraat', [
+            '9',
+        ]);
+        $this->newStreetPart(5, 'Thuis', [
+            'Taxichauffeur',
         ]);
     }
 
