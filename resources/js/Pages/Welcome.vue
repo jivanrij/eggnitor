@@ -25,7 +25,7 @@ defineProps({
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
-                <img src="/storage/eggs.png" class="h-40 w-40"/>
+                <img src="/storage/eieren.png" class="h-40 w-40"/>
             </div>
         </div>
     </div>
