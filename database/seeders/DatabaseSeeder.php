@@ -121,11 +121,11 @@ class DatabaseSeeder extends Seeder
             '4',
             '2',
         ]);
-        $this->newStreetPart(5, 'Ribesstraat', [
+        $this->newStreetPart(7, 'Ribesstraat', [
             '10 (over paar weken)',
             '2',
         ]);
-        $this->newStreetPart(0, 'Graaf van Egmondstraat', [
+        $this->newStreetPart(8, 'Graaf van Egmondstraat', [
             '68',
             '66',
             '64',
@@ -135,21 +135,21 @@ class DatabaseSeeder extends Seeder
             '52',
             '50',
         ]);
-        $this->newStreetPart(5, 'Begoniastraat', [
+        $this->newStreetPart(9, 'Begoniastraat', [
             '1',
             '3',
         ]);
-        $this->newStreetPart(5, 'Margrietstraat', [
+        $this->newStreetPart(10, 'Margrietstraat', [
             '1',
             '5',
             '9',
         ]);
-        $this->newStreetPart(5, 'Orchideestraat', [
+        $this->newStreetPart(11, 'Orchideestraat', [
             '3',
             '5',
             '13',
         ]);
-        $this->newStreetPart(5, 'Esdoornstraat', [
+        $this->newStreetPart(12, 'Esdoornstraat', [
             '1',
             '5',
             '13',
@@ -163,18 +163,18 @@ class DatabaseSeeder extends Seeder
             '8',
             '2',
         ]);
-        $this->newStreetPart(5, 'Jasmijnstraat', [
+        $this->newStreetPart(13, 'Jasmijnstraat', [
             '19',
             '15',
             '9',
             '5',
             '1',
         ]);
-        $this->newStreetPart(5, 'Margrietstraat', [
+        $this->newStreetPart(14, 'Margrietstraat', [
             '21',
             '17',
         ]);
-        $this->newStreetPart(5, 'Orchideestraat', [
+        $this->newStreetPart(15, 'Orchideestraat', [
             '2',
             '4',
             '10',
@@ -184,16 +184,16 @@ class DatabaseSeeder extends Seeder
             '18',
             '20',
         ]);
-        $this->newStreetPart(5, 'Meestoof', [
+        $this->newStreetPart(16, 'Meestoof', [
             '26',
         ]);
-        $this->newStreetPart(5, 'Mama\'s werk', [
+        $this->newStreetPart(17, 'Mama\'s werk', [
             'Christel',
         ]);
-        $this->newStreetPart(5, 'M Oosteromstraat', [
+        $this->newStreetPart(18, 'M Oosteromstraat', [
             '9',
         ]);
-        $this->newStreetPart(5, 'Thuis', [
+        $this->newStreetPart(19, 'Thuis', [
             'Taxichauffeur',
         ]);
     }
