@@ -45,7 +45,6 @@ class DatabaseSeeder extends Seeder
             '38',
             '52',
             '42',
-            '56',
             '84',
             '76',
             '74',
@@ -110,10 +109,12 @@ class DatabaseSeeder extends Seeder
             '24',
             '22',
             '20',
+            '3',
         ]);
         $this->newStreetPart(5, 'Begoniastraat', [
             '30',
             '12',
+            '9',
         ]);
         $this->newStreetPart(6, 'Lisstraat', [
             '14',
