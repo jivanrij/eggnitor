@@ -57,8 +57,6 @@ Route::middleware([
                 $house['key'] = $houseModel->getRouteKey();
                 $house['status'] = $weekStatus->status;
 
-
-
                 $house['maps'] = urlencode("{$houseModel->streetPart->name} {$houseModel->number}, Oud-Beijerland");
 
                 $street['houses'][] = $house;

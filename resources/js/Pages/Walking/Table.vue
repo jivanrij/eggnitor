@@ -56,7 +56,6 @@
 import House from "@/Pages/Walking/Table/House.vue";
 
 const emit = defineEmits(['updateStatusEvent'])
-
 const updateStatusEventHandler = (status, streetKey, number) => {
     emit('updateStatusEvent', status, streetKey, number)
 }
