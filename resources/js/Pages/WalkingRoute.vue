@@ -99,7 +99,6 @@ const updateStatusEventHandler = (status, streetKey, houseKey) => {
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg lg:p-8">
-
                     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div class="mx-auto max-w-3xl flex justify-center pt-10 pb-10">
                             <Label label="Nog doen" :count="todoCount" :color-class="'bg-gray-50'" />

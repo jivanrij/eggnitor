@@ -13,6 +13,7 @@ class WeekStatus extends Model
     protected $fillable = [
         'house_id',
         'week',
+        'year',
         'status',
     ];
 

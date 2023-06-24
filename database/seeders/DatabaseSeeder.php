@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\House;
+use App\Models\Street;
 use App\Models\StreetPart;
 use App\Models\User;
+use App\Models\WalkingRoute;
 use App\Models\WeekStatus;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -27,6 +30,59 @@ class DatabaseSeeder extends Seeder
             'email' => 'theijevanrij@gmail.com',
             'password' => Hash::make('HarleyIsLief2010'),
         ])->create();
+
+        WalkingRoute::create();
+
+        Street::updateOrCreate([
+            'name' => 'Graaf van Egmondstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Croonenburgh',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Asterstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Begoniastraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Lisstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Ribesstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Margrietstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Orchideestraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Esdoornstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Jasmijnstraat',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'Meestoof',
+        ])->create();
+
+        Street::updateOrCreate([
+            'name' => 'M Oostromstraat',
+        ])->create();
+
+
+        return;
 
         $this->newStreetPart(0, 'Graaf van Egmondstraat', [
             '5'

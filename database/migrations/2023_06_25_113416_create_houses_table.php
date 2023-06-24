@@ -14,7 +14,15 @@ return new class extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->id();
             $table->string('number');
-            $table->foreignId('street_part_id')->constrained()->onDelete('cascade');
+            $table->integer('order')->default(0);
+            $table->foreignId('street_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('walking_route_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

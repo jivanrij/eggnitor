@@ -25,7 +25,7 @@ Route::get('/', function () {
             'phpVersion' => PHP_VERSION,
         ]);
     }
-    return redirect()->route('walking');
+    return redirect()->route('walking-route');
 });
 
 Route::middleware([
@@ -36,6 +36,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::get('/walking-route', [\App\Http\Controllers\Controller::class => 'walkingRoute'])->name('walking-route');
 
     Route::get('/walking', function () {
 

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('week_statuses', function (Blueprint $table) {
+        Schema::create('walking_routes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('house_id')->constrained()->onDelete('cascade');
-            $table->string('week');
-            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('week_statuses');
+        Schema::dropIfExists('walking_routes');
     }
 };
