@@ -147,6 +147,7 @@ class DatabaseSeeder extends Seeder
             '9',
         ]);
         $this->newStreetPart(11, 'Orchideestraat', [
+            '1',
             '3',
             '5',
             '13',
