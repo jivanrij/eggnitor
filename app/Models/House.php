@@ -2,24 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class House extends Model
+class House extends Model implements \Spatie\EloquentSortable\Sortable
 {
     use HasFactory;
+    use \Spatie\EloquentSortable\SortableTrait;
 
     protected $fillable = [
         'street_id',
         'walking_route_id',
         'number',
-        'order',
+        'active',
     ];
 
-    protected $casts = [
-        'order' => 'integer',
+    protected $with = [
+        'street'
     ];
 
     public function walkingRoute(): BelongsTo

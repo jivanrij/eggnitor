@@ -54,6 +54,8 @@ const nothingSoldCount = computed(() => {
     return counter
 });
 
+// TODO Streets will bacome a list of houses
+
 const props = defineProps({
     streets: {
         type: Array,

@@ -10,6 +10,10 @@ class WalkingRoute extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+    ];
+
     public function houses(): HasMany
     {
         return $this->hasMany(House::class)->orderBy('order');

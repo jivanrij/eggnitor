@@ -23,7 +23,6 @@ class Controller extends BaseController
 
         WeekStatus::where('house_id', $house)->update(['status' => $status]);
 
-
         return response()->json([
             'message' => 'Yes!',
             'streetPart' => $streetPart,
@@ -32,7 +31,7 @@ class Controller extends BaseController
         ]);
     }
 
-    public function walkingRoute(Request $request)
+    public function index(Request $request)
     {
         $weekNumber = now()->weekOfYear;
         $year = now()->year;

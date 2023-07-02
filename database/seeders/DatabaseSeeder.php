@@ -32,48 +32,46 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('HarleyIsLief2010'),
         ])->create();
 
-        WalkingRoute::create();
+        DB::table('walking_routes')->insert([
+            'title' => 'Theije van Rij'
+        ]);
 
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Graaf van Egmondstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Croonenburgh'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Asterstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Begoniastraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Lisstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Ribesstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Margrietstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Orchideestraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Esdoornstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Jasmijnstraat'
         ]);
-        DB::table('streets')->insert([
+        Street::create([
             'name' => 'Meestoof'
         ]);
-        DB::table('streets')->insert([
-            'name' => 'M Oostromstraat'
+        Street::create([
+            'name' => 'M Oosteromstraat'
         ]);
-
-
-
-        return;
 
         $this->newStreetPart(0, 'Graaf van Egmondstraat', [
             '5'
@@ -240,18 +238,32 @@ class DatabaseSeeder extends Seeder
         $this->newStreetPart(16, 'Meestoof', [
             '26',
         ]);
-        $this->newStreetPart(17, 'Mama\'s werk', [
-            'Christel',
-        ]);
         $this->newStreetPart(18, 'M Oosteromstraat', [
             '9',
-        ]);
-        $this->newStreetPart(19, 'Thuis', [
-            'Taxichauffeur',
         ]);
     }
 
     private function newStreetPart($order, $name, $numbers) {
+
+        $street = Street::where('name', $name)->first();
+
+        if (!$street) {
+            dd($name);
+        }
+
+        $walkingRoute = WalkingRoute::where('title', 'Theije van Rij')->first();
+
+        foreach ($numbers as $number) {
+            House::create([
+                'street_id' => $street->id,
+                'walking_route_id' => $walkingRoute->id,
+                'number' => $number,
+            ]);
+        }
+
+        return;
+
+
         $streetPart = StreetPart::create([
             'order' => $order,
             'name' => $name,

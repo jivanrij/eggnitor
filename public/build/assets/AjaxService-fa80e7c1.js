@@ -1,0 +1,1 @@
+import{I as s}from"./app-9a64fd11.js";const e=s.create({baseURL:"",withCredentials:!0});e.interceptors.response.use(t=>t,function(t){return t.response&&[401,419].includes(t.response.status),Promise.reject(t)});const n={async updateStatus(t){return await e.get("/sanctum/csrf-cookie"),e.post("/update-status",t)}};export{n as A};

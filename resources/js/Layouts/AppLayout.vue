@@ -48,7 +48,7 @@ const logout = () => {
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('walking-route')" :active="route().current('walking-route')">
+                                <NavLink :href="route('index')" :active="route().current('index')">
                                     Route
                                 </NavLink>
                                 <NavLink :href="route('profile.show')" :active="route().current('profile.show')">

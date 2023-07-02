@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\WalkingRoute;
+use App\Models\WeekStatus;
 use Illuminate\Auth\Access\Response;
 
-class WalkingRoutePolicy
+class WeekStatusPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class WalkingRoutePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, WalkingRoute $walkingRoute): bool
+    public function view(User $user, WeekStatus $weekStatus): bool
     {
         return true;
     }
@@ -35,7 +35,7 @@ class WalkingRoutePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, WalkingRoute $walkingRoute): bool
+    public function update(User $user, WeekStatus $weekStatus): bool
     {
         return true;
     }
@@ -43,7 +43,7 @@ class WalkingRoutePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, WalkingRoute $walkingRoute): bool
+    public function delete(User $user, WeekStatus $weekStatus): bool
     {
         return true;
     }
@@ -51,7 +51,7 @@ class WalkingRoutePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, WalkingRoute $walkingRoute): bool
+    public function restore(User $user, WeekStatus $weekStatus): bool
     {
         return true;
     }
@@ -59,7 +59,7 @@ class WalkingRoutePolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, WalkingRoute $walkingRoute): bool
+    public function forceDelete(User $user, WeekStatus $weekStatus): bool
     {
         return true;
     }
