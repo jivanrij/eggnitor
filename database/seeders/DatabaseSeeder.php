@@ -10,6 +10,7 @@ use App\Models\WalkingRoute;
 use App\Models\WeekStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -33,53 +34,43 @@ class DatabaseSeeder extends Seeder
 
         WalkingRoute::create();
 
-        Street::updateOrCreate([
-            'name' => 'Graaf van Egmondstraat',
-        ])->create();
+        DB::table('streets')->insert([
+            'name' => 'Graaf van Egmondstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Croonenburgh'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Asterstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Begoniastraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Lisstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Ribesstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Margrietstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Orchideestraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Esdoornstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Jasmijnstraat'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'Meestoof'
+        ]);
+        DB::table('streets')->insert([
+            'name' => 'M Oostromstraat'
+        ]);
 
-        Street::updateOrCreate([
-            'name' => 'Croonenburgh',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Asterstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Begoniastraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Lisstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Ribesstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Margrietstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Orchideestraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Esdoornstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Jasmijnstraat',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'Meestoof',
-        ])->create();
-
-        Street::updateOrCreate([
-            'name' => 'M Oostromstraat',
-        ])->create();
 
 
         return;
