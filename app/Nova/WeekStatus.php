@@ -41,9 +41,19 @@ class WeekStatus extends Resource
      */
     public function fields(NovaRequest $request)
     {
+        $weeks = [];
+        foreach(range(1,52) as $week) {
+            $weeks[$week] = $week;
+        }
+
         return [
             BelongsTo::make('House')->sortable()->filterable(),
-            Select::make('Week')->options(range(1,52))->required()->default(now()->week)->sortable()->filterable(),
+            Select::make('Week')
+                ->options($weeks)
+                ->required()
+                ->default(now()->week)
+                ->sortable()
+                ->filterable(),
             Select::make('Year')->options([
                 2023 => 2023,
                 2024 => 2024,
@@ -55,8 +65,9 @@ class WeekStatus extends Resource
             Select::make('Status')->options([
                 0 => 'Nog doen',
                 1 => 'Niet thuis',
-                2 => 'Verkocht',
-                3 => 'Niets verkocht',
+                2 => '6 verkocht',
+                3 => '10 verkocht',
+                4 => 'Niets verkocht',
             ])->displayUsingLabels()->required()->default(0)->sortable()->filterable(),
         ];
     }

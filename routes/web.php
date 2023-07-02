@@ -3,6 +3,7 @@
 use App\Models\House;
 use App\Models\StreetPart;
 use App\Models\WalkingRoute;
+use App\Models\WeekStatus;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,23 +29,34 @@ Route::get('/', function () {
         ]);
     }
 
-
     $weekNumber = now()->weekOfYear;
     $year = now()->year;
 
-//    $walkingRoute = WalkingRoute::query()->first();
-
-    $walkingRouteData = [];
-    House::query()->orderBy('sort_order')->each(function (House $item) use ($weekNumber, $year, &$walkingRouteData) {
+    $houses = [];
+    $lastAssignedStreet = '';
+    House::query()->orderBy('sort_order')->each(function (House $item) use ($weekNumber, $year, &$houses, &$lastAssignedStreet) {
         $house = [];
+
+        if ($lastAssignedStreet === $item->street->name) {
+            $house['show_street_label'] = false;
+        } else {
+            $house['show_street_label'] = true;
+        }
+        $lastAssignedStreet = $item->street->name;
+
+        $house['maps'] = urlencode("{$item->street->name} {$item->number}, Oud-Beijerland");
+
+        $house['year'] = $year;
+        $house['week'] = $weekNumber;
         $house['number'] = $item->number;
+        $house['sort_order'] = $item->sort_order;
         $house['street'] = $item->street->name;
         $house['key'] = $item->getRouteKey();
-        $house['status'] = $item->weekStatuses()->where('week', $weekNumber)->where('year', $year)->first()?->status ?? 0;
-        $walkingRouteData[] = $house;
+        $house['status'] = WeekStatus::where('house_id', $item->id)->where('week', $weekNumber)->where('year', $year)->first()?->status ?? 0;
+        $houses[] = $house;
     });
 
-    return Inertia::render('WalkingRoute', []);
+    return Inertia::render('Index', ['houses' => $houses]);
 })->name('index');
 
 

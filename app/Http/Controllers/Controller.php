@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class Controller extends BaseController
@@ -17,16 +18,25 @@ class Controller extends BaseController
 
     public function updateStatus(Request $request)
     {
-        $streetPart = $request->post('streetPart');
-        $house = $request->post('house');
-        $status = $request->post('status');
+        if (!Auth::check()) {
+            return response()->json([
+                'message' => 'Not authorized',
+            ], 403);
+        }
 
-        WeekStatus::where('house_id', $house)->update(['status' => $status]);
+        $houseKey = $request->post('houseKey');
+        $status = $request->post('status');
+        $week = $request->post('week');
+        $year = $request->post('year');
+
+        WeekStatus::updateOrCreate(
+            ['house_id' => $houseKey, 'week' => $week, 'year' => $year],
+            ['status' => $status]
+        );
 
         return response()->json([
             'message' => 'Yes!',
-            'streetPart' => $streetPart,
-            'house' => $house,
+            'key' => $houseKey,
             'status' => $status,
         ]);
     }
