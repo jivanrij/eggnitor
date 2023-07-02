@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class WeekStatus extends Model
@@ -20,5 +21,12 @@ class WeekStatus extends Model
     public function house(): BelongsTo
     {
         return $this->belongsTo(House::class);
+    }
+
+    public function scopeActiveHouses(Builder $query): void
+    {
+        $query->with(['house' => function (Builder $query) {
+            $query->where('active', true);
+        }])->get();
     }
 }

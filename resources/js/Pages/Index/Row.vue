@@ -14,12 +14,9 @@
           class="inline-flex items-center rounded-md bg-yellow-500 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-pink-700/10">Niet thuis</span>
 
     <span v-if="house.status === 2"
-          class="inline-flex items-center rounded-md bg-green-400 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-pink-700/10">6 verkocht</span>
+          class="inline-flex items-center rounded-md bg-green-400 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-pink-700/10">Eieren verkocht</span>
 
     <span v-if="house.status === 3"
-          class="inline-flex items-center rounded-md bg-green-500 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-pink-700/10">10 verkocht</span>
-
-    <span v-if="house.status === 4"
           class="inline-flex items-center rounded-md bg-green-500 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-pink-700/10">Niets verkocht</span>
 
     <div class="flex flex-none items-center gap-x-4">

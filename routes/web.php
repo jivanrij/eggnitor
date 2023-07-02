@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\Time;
 use App\Models\House;
 use App\Models\StreetPart;
 use App\Models\WalkingRoute;
@@ -29,12 +30,9 @@ Route::get('/', function () {
         ]);
     }
 
-    $weekNumber = now()->weekOfYear;
-    $year = now()->year;
-
     $houses = [];
     $lastAssignedStreet = '';
-    House::query()->orderBy('sort_order')->each(function (House $item) use ($weekNumber, $year, &$houses, &$lastAssignedStreet) {
+    House::query()->where('active', true)->orderBy('sort_order')->each(function (House $item) use (&$houses, &$lastAssignedStreet) {
         $house = [];
 
         if ($lastAssignedStreet === $item->street->name) {
@@ -46,13 +44,13 @@ Route::get('/', function () {
 
         $house['maps'] = urlencode("{$item->street->name} {$item->number}, Oud-Beijerland");
 
-        $house['year'] = $year;
-        $house['week'] = $weekNumber;
+        $house['year'] = Time::now()->year;
+        $house['week'] = Time::now()->week;
         $house['number'] = $item->number;
         $house['sort_order'] = $item->sort_order;
         $house['street'] = $item->street->name;
         $house['key'] = $item->getRouteKey();
-        $house['status'] = WeekStatus::where('house_id', $item->id)->where('week', $weekNumber)->where('year', $year)->first()?->status ?? 0;
+        $house['status'] = WeekStatus::activeHouses()->where('house_id', $item->id)->where('week', Time::now()->week)->where('year', Time::now()->year)->first()?->status ?? 0;
         $houses[] = $house;
     });
 

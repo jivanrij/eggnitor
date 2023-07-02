@@ -13,13 +13,10 @@
                     <a @click.prevent="$emit('updateStatusEvent', 1)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niet thuis</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 2)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">6 verkocht</a>
+                    <a @click.prevent="$emit('updateStatusEvent', 2)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Eieren verkocht</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 3)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">10 verkocht</a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 4)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niets verkocht</a>
+                    <a @click.prevent="$emit('updateStatusEvent', 3)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niets verkocht</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
                     <a @click.prevent="openInMaps" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Google Maps</a>

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Classes\Time;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -51,7 +52,7 @@ class WeekStatus extends Resource
             Select::make('Week')
                 ->options($weeks)
                 ->required()
-                ->default(now()->week)
+                ->default(Time::now()->week)
                 ->sortable()
                 ->filterable(),
             Select::make('Year')->options([
@@ -61,13 +62,12 @@ class WeekStatus extends Resource
                 2026 => 2026,
                 2027 => 2027,
                 2028 => 2028,
-            ])->required()->default(now()->year)->sortable()->filterable(),
+            ])->required()->default(Time::now()->year)->sortable()->filterable(),
             Select::make('Status')->options([
                 0 => 'Nog doen',
                 1 => 'Niet thuis',
-                2 => '6 verkocht',
-                3 => '10 verkocht',
-                4 => 'Niets verkocht',
+                2 => 'Eieren verkocht',
+                3 => 'Niets verkocht',
             ])->displayUsingLabels()->required()->default(0)->sortable()->filterable(),
         ];
     }

@@ -2,7 +2,10 @@
 
 namespace App\Nova\Dashboards;
 
-use Laravel\Nova\Cards\Help;
+use App\Nova\Metrics\NotOpenedMetric;
+use App\Nova\Metrics\NotYetDoneMetric;
+use App\Nova\Metrics\SoldEggsMetric;
+use App\Nova\Metrics\SoldNothingMetric;
 use Laravel\Nova\Dashboards\Main as Dashboard;
 
 class Main extends Dashboard
@@ -15,7 +18,10 @@ class Main extends Dashboard
     public function cards()
     {
         return [
-            new Help,
+            new NotYetDoneMetric,
+            new NotOpenedMetric,
+            new SoldEggsMetric,
+            new SoldNothingMetric,
         ];
     }
 }

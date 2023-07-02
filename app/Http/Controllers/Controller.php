@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Time;
 use App\Models\House;
 use App\Models\WalkingRoute;
 use App\Models\WeekStatus;
@@ -43,18 +44,15 @@ class Controller extends BaseController
 
     public function index(Request $request)
     {
-        $weekNumber = now()->weekOfYear;
-        $year = now()->year;
-
         $walkingRoute = WalkingRoute::query()->first();
 
         $walkingRouteData = [];
-        $walkingRoute->houses()->each(function (House $item) use ($weekNumber, $year, &$walkingRouteData) {
+        $walkingRoute->houses()->each(function (House $item) use (&$walkingRouteData) {
             $house = [];
             $house['number'] = $item->number;
             $house['street'] = $item->street->name;
             $house['key'] = $item->getRouteKey();
-            $house['status'] = $item->weekStatuses()->where('week', $weekNumber)->where('year', $year)->first()?->status ?? 0;
+            $house['status'] = $item->weekStatuses()->where('week', Time::now()->week)->where('year', Time::now()->year)->first()?->status ?? 0;
             $walkingRouteData[] = $house;
         });
 
