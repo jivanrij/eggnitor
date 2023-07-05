@@ -88,4 +88,14 @@ class WalkingRoute extends Resource
     {
         return [];
     }
+
+    public static function label()
+    {
+        return 'Routes';
+    }
+
+    public static function singularLabel()
+    {
+        return 'Route';
+    }
 }

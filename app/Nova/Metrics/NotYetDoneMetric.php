@@ -31,7 +31,7 @@ class NotYetDoneMetric extends Value
             ->whereIn('status', [1,2,3])
             ->count();
 
-        $housesCount = House::query()->where('active', true)->count();
+        $housesCount = House::query()->where('status', House\Status::Active->slug())->count();
 
         return $this->result($housesCount - $notThisOnes);
     }

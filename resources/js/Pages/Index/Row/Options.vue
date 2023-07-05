@@ -7,19 +7,19 @@
         <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
             <MenuItems class="absolute right-0 z-10 mt-2 w-60 origin-center rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 0)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Nog doen</a>
+                    <a @click="$emit('updateStatusEvent', 0)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Nog doen</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 1)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niet thuis</a>
+                    <a @click="$emit('updateStatusEvent', 1)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niet thuis</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 2)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Eieren verkocht</a>
+                    <a @click="$emit('updateStatusEvent', 2)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Eieren verkocht</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="$emit('updateStatusEvent', 3)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niets verkocht</a>
+                    <a @click="$emit('updateStatusEvent', 3)" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Niets verkocht</a>
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
-                    <a @click.prevent="openInMaps" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Google Maps</a>
+                    <a @click="openInMaps" href="#" :class="[active ? 'bg-gray-50' : '', 'block px-3 py-1 text-sm leading-6 text-gray-900']">Google Maps</a>
                 </MenuItem>
             </MenuItems>
         </transition>

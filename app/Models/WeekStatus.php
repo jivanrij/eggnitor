@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\House\Status;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -26,7 +27,7 @@ class WeekStatus extends Model
     public function scopeActiveHouses(Builder $query): void
     {
         $query->with(['house' => function (Builder $query) {
-            $query->where('active', true);
+            $query->where('status', Status::Active->slug());
         }])->get();
     }
 }

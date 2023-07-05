@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 
 class WeekStatus extends Resource
 {
@@ -113,6 +114,7 @@ class WeekStatus extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+        ];
     }
 }

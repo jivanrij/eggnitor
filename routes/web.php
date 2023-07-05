@@ -32,7 +32,7 @@ Route::get('/', function () {
 
     $houses = [];
     $lastAssignedStreet = '';
-    House::query()->where('active', true)->orderBy('sort_order')->each(function (House $item) use (&$houses, &$lastAssignedStreet) {
+    House::query()->where('status', House\Status::Active->slug())->orderBy('sort_order')->each(function (House $item) use (&$houses, &$lastAssignedStreet) {
         $house = [];
 
         if ($lastAssignedStreet === $item->street->name) {
