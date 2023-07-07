@@ -45,7 +45,7 @@ class HousePolicy
      */
     public function delete(User $user, House $house): bool
     {
-        return $house->weekStatuses()->count() === 0;
+        return $house->weekStatuses()->count() === 0 && $house->houseNotes()->count() === 0;
     }
 
     /**
